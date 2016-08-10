@@ -32,8 +32,9 @@ class UserRegistration
       @created = false
     else
       @user = User.create(
-        uid:        uid, 
+        uid:        uid,
         name:       @auth_hash['info']['name'],
+        email:      @auth_hash['info']['email'],
         created_at: Time.current.utc.to_i
       )
       @created = true
